@@ -21,12 +21,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx
-  labels:
-    run: nginx
+  name: nginx-service
 spec:
-  ports:
-  - port: 80
-    protocol: TCP
   selector:
-    run: nginx
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
